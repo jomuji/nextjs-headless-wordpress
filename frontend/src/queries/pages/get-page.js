@@ -9,6 +9,7 @@ export const GET_PAGE = gql`
 	  page: pageBy(uri: $uri) {
 	    id
 	    title
+		excerpt
 	    content
 	    slug
 	    uri
@@ -27,6 +28,7 @@ export const GET_PAGE_BY_ID = gql`
 	  page(idType: DATABASE_ID, id: $id) {
 	    id
 	    title
+		excerpt
 	    content
 	    slug
 	    uri

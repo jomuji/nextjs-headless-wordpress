@@ -11,7 +11,8 @@ import {
 const PagePreview = ( { data } ) => {
 	return (
 		<Layout data={data}>
-			<div dangerouslySetInnerHTML={{__html: sanitize( data?.page?.content ?? {} )}}/>
+			<h1>test</h1>
+			<div dangerouslySetInnerHTML={{__html: sanitize( data?.page?.content ?? {} )}} id="test" className="container" />
 		</Layout>
 	);
 };

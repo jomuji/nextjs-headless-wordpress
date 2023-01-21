@@ -16,17 +16,17 @@ const Nav = ( {header, headerMenus, slug} ) => {
 
 
 	return (
-		<nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+		<nav className="nav-bar container mx-auto flex items-center justify-between flex-wrap p-6">
 			<div className="flex items-center flex-shrink-0 text-white mr-6">
 				<Link href="/">
 					<a>
-						<img src={header?.siteLogoUrl ?? ''} alt="" width="48" height="48" className="mr-4"/>
+						<img src={header?.siteLogoUrl ?? ''} alt="" width="200" height="60" className="mr-4"/>
 					</a>
 				</Link>
-				<div className="flex flex-col items-start justify-start">
+				{/* <div className="flex flex-col items-start justify-start">
 					<span className="font-semibold text-xl tracking-tight">{header?.siteTitle}</span>
 					<span>{header?.siteTagLine}</span>
-				</div>
+				</div> */}
 			</div>
 			<div className="block lg:hidden">
 				<button
@@ -40,9 +40,17 @@ const Nav = ( {header, headerMenus, slug} ) => {
 					</svg>
 				</button>
 			</div>
-			<div className={`${ isMenuVisible ? 'max-h-full' : 'h-0' } overflow-hidden w-full lg:h-full block flex-grow lg:flex lg:items-center lg:w-auto`}>
+			<div className={`${ isMenuVisible ? 'max-h-full' : 'h-0' } overflow-hidden w-full lg:h-full block flex-grow lg:flex lg:items-center lg:w-auto mx-auto`}>
 				{ headerMenus?.length ? (
 					<div className="text-sm lg:flex-grow">
+						<Link href={'/'}>
+							<a
+								className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+								data-cy="nav-item"
+							>
+                			Home
+							</a>
+						</Link>
 						{ headerMenus?.map( menu => {
 							if ( ! isCustomPageUri( menu?.node?.path ) ) {
 								return  (
@@ -62,7 +70,7 @@ const Nav = ( {header, headerMenus, slug} ) => {
 								className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
 								data-cy="nav-item"
 							>
-                Blog
+                				Blog
 							</a>
 						</Link>
 						<Link href={'/news/'}>
@@ -78,7 +86,7 @@ const Nav = ( {header, headerMenus, slug} ) => {
 				<div className="flex-col-reverse flex lg:flex-row">
           { 'search' !== slug ? <NavSearch/> : null }
           <div className="lg:flex items-center">
-            <a href="#"
+            <a href="/contact-us/"
                className="lg:ml-2 inline-block text-sm px-4 py-3 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
               Contact
             </a>

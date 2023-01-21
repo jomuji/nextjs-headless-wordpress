@@ -9,7 +9,7 @@ const Header = ( {header, headerMenus, slug} ) => {
 	}
 
 	return (
-		<header>
+		<header className="top-header bg-transparent fixed top-0 left-0 right-0">
 			<Nav header={header} headerMenus={headerMenus} slug={slug}/>
 		</header>
 	);

@@ -21,7 +21,7 @@ const Footer = ( {footer, footerMenus} ) => {
 
 				<div className="my-1 px-1 w-full overflow-hidden sm:w-full lg:w-1/2 xl:w-1/3">
           {/*Mailchimp Newsletter Subscription*/}
-          <NewsletterSubscribe/>
+          {/* <NewsletterSubscribe/> */}
           {/* Footer Menus*/}
 					{ ! isEmpty( footerMenus ) && isArray( footerMenus ) ? (
 						<ul>
